@@ -17,12 +17,10 @@
 
 <body>
     <div class="wrapper d-flex align-items-stretch">
-
-        <nav id="sidebar">
+        <nav id="sidebar" class="bg-success">
             <div class="p-4 pt-5">
-                <a href="#" class="img logo rounded-circle mb-1"
-                    style="background-image: url({% static 'images/logo.jpg' %});"></a>
-                <h2 class="text-center text-light">Abcd XYZ</h2>
+                <a href="#" class="img logo mb-1"
+                    style="background-image: url({% static 'images/photo_2021-04-06_13-18-45.jpg' %});"></a>
                 <ul class="list-unstyled components mb-5">
                     <li>
                         <a href="{% url 'index' %}">Home</a>
@@ -32,13 +30,13 @@
                             class="dropdown-toggle">Product</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li>
-                                <a href="{% url 'products' %}">Grocery</a>
+                                <a href="{% url 'Grocery' %}">Grocery</a>
                             </li>
                             <li>
-                                <a href="{% url 'products' %}">Dress</a>
+                                <a href="{% url 'Dress' %}">Dress</a>
                             </li>
                             <li>
-                                <a href="{% url 'products' %}">Electronics</a>
+                                <a href="{% url 'Electronics' %}">Electronics</a>
                             </li>
                         </ul>
                     </li>
@@ -58,9 +56,6 @@
                         <a href="{% url 'login' %}">Login</a>
                     </li>
                     {% endif%}
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
                 </ul>
 
                 <div class="footer">
@@ -85,15 +80,6 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item ">
-                                <a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Portfolio</a>
-                            </li>
                             <li class="nav-item">
                                 {% if request.user.is_superuser %}
                                 <a class="nav-link" href="http://localhost:8000/admin/">Admin</a>
@@ -103,6 +89,9 @@
                     </div>
                 </div>
             </nav>
+            <marquee width="100%" direction="left" style="background-color: red;">
+                This is a sample scrolling text that has scrolls texts to right.
+                </marquee>
             {% block content %}
 
             {% endblock %}

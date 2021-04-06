@@ -2,37 +2,46 @@
 {% load static %}
 {% block content%}
 <div class="">
-  <img src="https://i.pinimg.com/originals/0b/a3/d6/0ba3d60362c7e6d256cfc1f37156bad9.jpg" class="img-fluid"
+  <img src="{% static 'images/photo_2021-04-06_13-18-42.jpg' %}" class="img-fluid"
     alt="Responsive image">
 </div>
 <div class="container"> 
   <div class="row m-4">
     <div class="col-4 ">
-      <div class="card p-1" style="width: 18rem;">
-        <img class="card-img-top" src="https://feedmotorsports.com/photos/product/4/176/4.jpg" alt="Card image cap">
+      <div class="card p-1" style="width: 100%">
+    <a href="{% url 'Grocery' %}">
+        <img class="card-img-top" src="{% static 'images/photo_2021-04-06_13-18-30.jpg' %}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Grocery</h5>
         </div>
+    </a>
       </div>
     </div>
-
+  </a>
+  
     <div class="col-4">
       <div class="card p-1" style="width: 18rem;">
-        <img class="card-img-top" src="https://feedmotorsports.com/photos/product/4/176/4.jpg" alt="Card image cap">
+        <a href="{% url 'Dress' %}">
+        <img class="card-img-top" src="{% static 'images/photo_2021-04-06_13-18-39.jpg ' %}" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">Dress</h5>
+          <h5 class="card-title"><a href="{% url 'Dress' %}">Dress</h5>
         </div>
+      </a>
       </div>
     </div>
-
+  </a>
+  <a href="{% url 'Electronics' %}">
     <div class="col-4  ">
       <div class="card p-1" style="width: 18rem;">
-        <img class="card-img-top" src="https://feedmotorsports.com/photos/product/4/176/4.jpg" alt="Card image cap">
+    <a href="{% url 'Grocery' %}">
+        <img class="card-img-top" src="{% static 'images/photo_2021-04-06_13-18-36.jpg' %}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Electronics</h5>
         </div>
+        </a>
       </div>
     </div>
+  </a>
   </div>
 </div>
 {% endblock %}

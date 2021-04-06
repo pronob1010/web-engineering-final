@@ -48,7 +48,20 @@ def userProfile(request):
     return render(request, 'profile.html', {'profile':profile})
 
 def displayProduct(request):
-    return render(request, 'products.html',{})
+    products = product.objects.all()
+    return render(request, 'products.html',{'products':products})
+
+def Grocery(request):
+    products = product.objects.filter(category__id='3')
+    return render(request, 'products.html',{'products':products})
+
+def Dress(request):
+    products = product.objects.filter(category__id='4')
+    return render(request, 'products.html',{'products':products})
+
+def Electronics(request):
+    products = product.objects.filter(category__id='5')
+    return render(request, 'products.html',{'products':products})
 
 from . forms import userProfileForm
 def profileedit(request):
@@ -75,16 +88,3 @@ def profileedit(request):
         'form' : form 
     }
     return render(request, 'profileCreate.html', context)
-# from . forms import product_insert
-# def createProduct(request):
-#     if request.method == "POST":
-#         form = jobpostForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             data = form.save(commit=False)
-#             data.job_provider = request.user
-#             data.save()
-#             form.save_m2m()
-#             return redirect('my_jobs')
-#     else:
-#         form = jobpostForm()
-#     return render(request, 'jobposting.html', {'form':form})

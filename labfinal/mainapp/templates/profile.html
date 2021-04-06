@@ -6,9 +6,10 @@
   <div class="">
 
     {% if profile.image.url != "" %}
-    <img src="" class=" rounded mx-auto d-block"></img>
-    {% else %}
     <img src="{{profile.image.url}}" class=" rounded mx-auto d-block"></img>
+    {% else %}
+    <img src="" class=" rounded mx-auto d-block"></img>
+    
     {% endif %}
     <div class="card-text pt-5">
       <h4>Name : {{ user.first_name}} {{ user.last_name}}</h4>
